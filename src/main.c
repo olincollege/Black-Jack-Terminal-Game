@@ -1,20 +1,45 @@
 #include <stdio.h>
+#include <ncurses.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #include "game_logic.h"
 #include "terminal_ui.h"
 #include "deck.h"
 
-void main(void){
+int main(void){
+
+
+    // init_pair(1,COLOR_GREEN,COLOR_MAGENTA);
+    // attron(COLOR_PAIR(1));
+    // printw("AHHH");
+    // attroff(COLOR_PAIR(1));
+    // getch();
+    initscr(); 
+    cbreak();
+    keypad(stdscr, TRUE);
+    start_color();
+    move(25,95);
+    printw("Blackjack game initated");
+    mvprintw(26,95, "Press any key to play"); 
+    getch();
+    clear();
     COINS coins = {0};
+    CARD deck[DECK_SIZE*NUM_DECKS];
+    GAME_STATE game_state = init_game(deck, &coins);
+    
     while (1){
-        CARD deck[104];
-        GAME_STATE game_state = init_game(deck, coins);
-        print_card(deck[78]);
-        int end_game = player_turn(deck, &game_state.player_hand, &game_state.top_card, &coins);
-        int may_game = bot_turn(deck, &game_state.bot_hand, &game_state.dealer_hand, 
+        player_turn(deck, &game_state.player_hand, &game_state.top_card, &coins);
+        refresh();
+        bot_turn(deck, &game_state.bot_hand, &game_state.dealer_hand, 
             &game_state.top_card, &coins);
         dealer_turn(deck, &game_state.dealer_hand, &game_state.player_hand, 
-            &game_state.bot_hand, &game_state.top_card, &coins);;
+            &game_state.bot_hand, &game_state.top_card, &coins);
         print_showdown(game_state.player_hand, game_state.dealer_hand, game_state.bot_hand, &coins);
+        getch();
+        init_new_round(deck, &coins, &game_state.top_card, &game_state.dealer_hand, 
+        &game_state.player_hand, &game_state.bot_hand);
     }
+    endwin();
+    return 0;
 }

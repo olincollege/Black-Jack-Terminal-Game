@@ -1,0 +1,2 @@
+/bin/ar qc libbot_decision.a CMakeFiles/bot_decision.dir/bot_decision.c.o
+/bin/ranlib libbot_decision.a

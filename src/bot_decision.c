@@ -1,6 +1,10 @@
 #include <stdio.h>
+#include <ncurses.h>
 
+#include "terminal_ui.h"
 #include "bot_decision.h"
+
+
 
 const char* hard_decision_table[17][10] = {
     /* player total 4 */  {HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT},
@@ -35,7 +39,7 @@ const char* soft_decision_table[9][10] = {
 };
 
 
-int bot_decision(PLAYER_HAND bot_hand, PLAYER_HAND dealer_hand){
+int bot_decision(PLAYER_HAND bot_hand, PLAYER_HAND dealer_hand, COINS *coins){
     const char* decision;
     int hard_total = hand_sum(bot_hand);
         if (hard_total == 21){return 0;}
@@ -62,13 +66,33 @@ int bot_decision(PLAYER_HAND bot_hand, PLAYER_HAND dealer_hand){
         decision = hard_decision_table[hard_total-4][dealer_shows-2];
     }
     if (decision[0] == 'h' || decision[0] == 'H'){
-        printf("Bot hits and gets:\n");
+        move(PROMPT_Y,PROMPT_X);
+        clrtoeol();
+        printw("Bot hits and gets:\n");
         return 1;
     }
     if (decision[0] == 's' || decision[0] == 'S'){
-        printf("Bot stands\n");
+        move(PROMPT_Y,PROMPT_X);
+        clrtoeol();
+        printw("Bot stands\n");
+        move(PROMPT_Y+1,PROMPT_X);
+        printw("                           ");
+        refresh();
+        sleep(1);
         return 0;
     };
-    printf("something is wrong\n\n");
+    printw("something is wrong\n\n");
 }
     
+int get_bot_bet(CARD deck[], int top_card){
+    int card_count = 0;
+    for (int i = 0; i < top_card; ++i){
+        card_count += deck[i].hi_lo;
+    }
+    double deck_remaining = ((NUM_DECKS*DECK_SIZE-top_card)/52.0);
+    double card_count_index = (double)card_count/(deck_remaining);
+    if (card_count_index < 1) {return 1;}
+    if (card_count_index < 2) {return 5;}
+    if (card_count_index < 4) {return 10;}
+    return 20;
+    }
