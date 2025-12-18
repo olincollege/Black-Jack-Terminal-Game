@@ -29,6 +29,14 @@ After deck was created I checked a random card to make sure it was not Kind of D
 ![Checking random cards in the deck](images/checking_random_cards.png) 
 
 
+Sources:
+
+I looked at a public Github https://github.com/jonwho/Console-Blackjack-in-C/blob/master/Blackjack.c to see how other people created a deck, and got some ideas on how to do itself
+
+I learned how to use ncurses using the Youtube series linked with: https://www.youtube.com/watch?v=lV-OPQhPvSM&list=PL2U2TQ__OrQ8jTf0_noNKtHMuYlyxQl4v
+
+ChatGPT: ChatGPT had its uses for the project that included how to embed images into this ReadMe, how to use rand() that was used to shuffle the deck, and the two switch cases card_name_string and card_suit_string as they were tedious to write out myself and saw it could save me some time and was not worried it would break any logic as they are pretty simple switch cases just a lot of writing. I also used it to find the function that lets you use criterion assertions with integers (we only used doubles and strings in class that I could find). 
+
 
 
 
