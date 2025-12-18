@@ -1,0 +1,2 @@
+/bin/ar qc libcard_counting.a CMakeFiles/card_counting.dir/card_counting.c.o
+/bin/ranlib libcard_counting.a

@@ -183,6 +183,20 @@ terminal_ui/fast:
 .PHONY : terminal_ui/fast
 
 # Convenience name for target.
+src/CMakeFiles/card_counting.dir/rule:
+	cd /home/troy/Downloads/Black-Jack-Terminal-Game/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/card_counting.dir/rule
+.PHONY : src/CMakeFiles/card_counting.dir/rule
+
+# Convenience name for target.
+card_counting: src/CMakeFiles/card_counting.dir/rule
+.PHONY : card_counting
+
+# fast build rule for target.
+card_counting/fast:
+	cd /home/troy/Downloads/Black-Jack-Terminal-Game/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/card_counting.dir/build.make src/CMakeFiles/card_counting.dir/build
+.PHONY : card_counting/fast
+
+# Convenience name for target.
 src/CMakeFiles/main.dir/rule:
 	cd /home/troy/Downloads/Black-Jack-Terminal-Game/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
 .PHONY : src/CMakeFiles/main.dir/rule
@@ -219,6 +233,30 @@ bot_decision.s: bot_decision.c.s
 bot_decision.c.s:
 	cd /home/troy/Downloads/Black-Jack-Terminal-Game/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bot_decision.dir/build.make src/CMakeFiles/bot_decision.dir/bot_decision.c.s
 .PHONY : bot_decision.c.s
+
+card_counting.o: card_counting.c.o
+.PHONY : card_counting.o
+
+# target to build an object file
+card_counting.c.o:
+	cd /home/troy/Downloads/Black-Jack-Terminal-Game/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/card_counting.dir/build.make src/CMakeFiles/card_counting.dir/card_counting.c.o
+.PHONY : card_counting.c.o
+
+card_counting.i: card_counting.c.i
+.PHONY : card_counting.i
+
+# target to preprocess a source file
+card_counting.c.i:
+	cd /home/troy/Downloads/Black-Jack-Terminal-Game/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/card_counting.dir/build.make src/CMakeFiles/card_counting.dir/card_counting.c.i
+.PHONY : card_counting.c.i
+
+card_counting.s: card_counting.c.s
+.PHONY : card_counting.s
+
+# target to generate assembly for a file
+card_counting.c.s:
+	cd /home/troy/Downloads/Black-Jack-Terminal-Game/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/card_counting.dir/build.make src/CMakeFiles/card_counting.dir/card_counting.c.s
+.PHONY : card_counting.c.s
 
 deck.o: deck.c.o
 .PHONY : deck.o
@@ -326,6 +364,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... bot_decision"
+	@echo "... card_counting"
 	@echo "... deck"
 	@echo "... game_logic"
 	@echo "... main"
@@ -333,6 +372,9 @@ help:
 	@echo "... bot_decision.o"
 	@echo "... bot_decision.i"
 	@echo "... bot_decision.s"
+	@echo "... card_counting.o"
+	@echo "... card_counting.i"
+	@echo "... card_counting.s"
 	@echo "... deck.o"
 	@echo "... deck.i"
 	@echo "... deck.s"

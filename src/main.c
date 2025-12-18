@@ -1,23 +1,18 @@
 #include <stdio.h>
-#include <ncurses.h>
 #include <stdlib.h>
 #include <unistd.h>
 
+#include <ncurses.h>
+
+#include "deck.h"
 #include "game_logic.h"
 #include "terminal_ui.h"
-#include "deck.h"
+
 
 int main(void){
 
-
-    // init_pair(1,COLOR_GREEN,COLOR_MAGENTA);
-    // attron(COLOR_PAIR(1));
-    // printw("AHHH");
-    // attroff(COLOR_PAIR(1));
-    // getch();
     initscr(); 
     cbreak();
-    keypad(stdscr, TRUE);
     start_color();
     move(25,95);
     printw("Blackjack game initated");

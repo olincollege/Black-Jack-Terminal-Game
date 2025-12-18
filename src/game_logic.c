@@ -9,6 +9,8 @@ GAME_STATE init_game (CARD deck[], COINS *coins){
     create_deck(deck);
     shuffle_deck(deck);
     ask_player_bet(coins);
+    //bot always bets 1 on first round as there
+    //is nothing to base card counting off of
     (*coins).bot_bet = 1;
     game.top_card = 0;
     game.bot_hand = deal_player_cards(deck, game.top_card, "bot");
@@ -29,6 +31,7 @@ void init_new_round (CARD deck[], COINS *coins, int *top_card, PLAYER_HAND *deal
     move(25,95);
     printw("Press any key to start new hand");
     getch();
+    //Take everything off the screen
     clear();
     if (*top_card > (DECK_SIZE * NUM_DECKS) - MIN_DECK_SIZE){
         create_deck(deck);
@@ -38,7 +41,6 @@ void init_new_round (CARD deck[], COINS *coins, int *top_card, PLAYER_HAND *deal
     }
     (*coins).bot_bet = get_bot_bet(deck, *top_card);
     ask_player_bet(coins);
-
     (*bot_hand) = deal_player_cards(deck, (*top_card), "bot");
     (*top_card) = (*top_card) + 2;
     (*player_hand) = deal_player_cards(deck, (*top_card), "player");
@@ -51,9 +53,12 @@ void init_new_round (CARD deck[], COINS *coins, int *top_card, PLAYER_HAND *deal
 
 int hand_sum (PLAYER_HAND hand){
     int hand_sum = 0;
+    //Add all the values of cards they have in hand
     for (int i = 0; i <= hand.count; ++i) {
         hand_sum += hand.cards[i].card_value;
     }
+    //If giving them an extra 10 from an Ace does not bust them
+    //add 10 to the 1 value the ACE is currently
     for (int i = 0; i <= hand.count; ++i) {
         if (hand.cards[i].card_name == ACE && hand_sum < ADD_ACE){
             hand_sum += ACE_ADD;
@@ -65,14 +70,18 @@ int hand_sum (PLAYER_HAND hand){
 void player_turn(CARD deck[], PLAYER_HAND *hand, int *top_card, COINS *coins){
     int move = 1;
     while ((move = ask_player_move()) == 1) {
+        //Add 1 to their hand count (size of hand)
         (*hand).count++;
+        //Move where you display the card down a line
         (*hand).y_cord += 1;
+        //Put the top card of deck into their empty slot
         (*hand).cards[(*hand).count] = deck[*top_card];
         move((*hand).y_cord + 3,(*hand).x_cord);
         print_card((*hand).cards[(*hand).count]);
         (*top_card) ++;
         print_hand_sum(*hand);
         move((*hand).y_cord+4,(*hand).x_cord);
+        //clear where the old hand_sum was printed
         printw("                    ");
         if (hand_sum(*hand) > 21){
             move(PROMPT_Y,PROMPT_X);
@@ -91,16 +100,19 @@ void player_turn(CARD deck[], PLAYER_HAND *hand, int *top_card, COINS *coins){
 void bot_turn(CARD deck[], PLAYER_HAND *bot_hand, PLAYER_HAND *dealer_hand, int *top_card, COINS *coins){
     int move = 1;
     while ((move = bot_decision(*bot_hand, *dealer_hand, coins)) == 1) {
+        //if bot hit add a card to hand and move to next line to show card
         (*bot_hand).count++;
         (*bot_hand).y_cord += 1;
         (*bot_hand).cards[(*bot_hand).count] = deck[*top_card];
         move((*bot_hand).y_cord + 3,(*bot_hand).x_cord);
         print_card((*bot_hand).cards[(*bot_hand).count]);
         refresh();
+        //move to display what the bot got
         move(PROMPT_Y+1,PROMPT_X);
         print_card((*bot_hand).cards[(*bot_hand).count]);
         refresh();
         (*top_card) ++;
+        //Show hand sum and get rid of where it was displayed before
         print_hand_sum(*bot_hand);
         move((*bot_hand).y_cord+4,(*bot_hand).x_cord);
         printw("                    ");
@@ -124,6 +136,7 @@ void dealer_turn(CARD deck[], PLAYER_HAND *dealer_hand,
     PLAYER_HAND *player_hand, PLAYER_HAND *bot_hand, int *top_card, COINS *coins){
     print_hand(*dealer_hand, (*dealer_hand).count);
     while (hand_sum(*dealer_hand) < DEALER_HIT && !(hand_sum(*dealer_hand) > BUST_AMOUNT)) {
+        //if dealer hits and a card to hand and move to next line to display
         (*dealer_hand).count++;
         (*dealer_hand).y_cord ++;
         (*dealer_hand).cards[(*dealer_hand).count] = deck[*top_card];
@@ -131,13 +144,15 @@ void dealer_turn(CARD deck[], PLAYER_HAND *dealer_hand,
         move(PROMPT_Y,PROMPT_X);
         clrtoeol();
         printw("Dealer hits:\n");
+        //move to where next card goes for dealer
         move((*dealer_hand).y_cord + 3,(*dealer_hand).x_cord);
         print_card((*dealer_hand).cards[(*dealer_hand).count]);
+        //Also show the card where the prompt is
         move(PROMPT_Y+1,PROMPT_X);
         clrtoeol();
         print_card((*dealer_hand).cards[(*dealer_hand).count]);
         refresh();
-        move((*dealer_hand).y_cord + 5,(*dealer_hand).x_cord);
+        //move to where hand sum should be printed and get rid of the old line
         print_hand_sum(*dealer_hand);
         move((*dealer_hand).y_cord+4,(*dealer_hand).x_cord);
         printw("                    ");

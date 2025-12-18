@@ -17,6 +17,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/troy/Downloads/Black-Jack-Terminal-Game/build/src/CMakeFiles/deck.dir/DependInfo.cmake"
   "/home/troy/Downloads/Black-Jack-Terminal-Game/build/src/CMakeFiles/bot_decision.dir/DependInfo.cmake"
   "/home/troy/Downloads/Black-Jack-Terminal-Game/build/src/CMakeFiles/terminal_ui.dir/DependInfo.cmake"
+  "/home/troy/Downloads/Black-Jack-Terminal-Game/build/src/CMakeFiles/card_counting.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

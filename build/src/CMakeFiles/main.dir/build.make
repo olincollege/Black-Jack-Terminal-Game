@@ -96,6 +96,7 @@ src/main: src/libgame_logic.a
 src/main: src/libdeck.a
 src/main: src/libbot_decision.a
 src/main: src/libterminal_ui.a
+src/main: src/libcard_counting.a
 src/main: src/CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable main"
 	cd /home/troy/Downloads/Black-Jack-Terminal-Game/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)

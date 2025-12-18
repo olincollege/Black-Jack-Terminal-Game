@@ -66,7 +66,8 @@
 						29,
 						30,
 						31,
-						32
+						32,
+						33
 					]
 				},
 				{
@@ -126,7 +127,8 @@
 						29,
 						30,
 						31,
-						32
+						32,
+						33
 					]
 				}
 			],
@@ -337,6 +339,13 @@
 				},
 				{
 					"directoryIndex" : 1,
+					"id" : "card_counting::@145eef247bfb46b6828c",
+					"jsonFile" : "target-card_counting-Debug-560236bf25122c97158e.json",
+					"name" : "card_counting",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
 					"id" : "deck::@145eef247bfb46b6828c",
 					"jsonFile" : "target-deck-Debug-0578d5baad22c10d8001.json",
 					"name" : "deck",
@@ -352,7 +361,7 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "main::@145eef247bfb46b6828c",
-					"jsonFile" : "target-main-Debug-01472348c978824ff84f.json",
+					"jsonFile" : "target-main-Debug-0b24d30133d270bae7bc.json",
 					"name" : "main",
 					"projectIndex" : 0
 				},

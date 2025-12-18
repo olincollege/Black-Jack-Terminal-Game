@@ -543,6 +543,19 @@ terminal_ui/fast:
 .PHONY : terminal_ui/fast
 
 #=============================================================================
+# Target rules for targets named card_counting
+
+# Build rule for target.
+card_counting: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 card_counting
+.PHONY : card_counting
+
+# fast build rule for target.
+card_counting/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/card_counting.dir/build.make src/CMakeFiles/card_counting.dir/build
+.PHONY : card_counting/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -593,6 +606,7 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... bot_decision"
+	@echo "... card_counting"
 	@echo "... deck"
 	@echo "... game_logic"
 	@echo "... main"

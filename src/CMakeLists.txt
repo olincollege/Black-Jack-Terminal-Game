@@ -14,11 +14,12 @@ add_library(deck deck.c deck.h)
 add_library(game_logic game_logic.c game_logic.h)
 add_library(bot_decision bot_decision.c bot_decision.h)
 add_library(terminal_ui terminal_ui.c terminal_ui.h)
+add_library(card_counting card_counting.c card_counting.h)
 
 # Executable
 add_executable(main main.c)
 
 # Link libraries in dependency order
-target_link_libraries(main PRIVATE game_logic deck bot_decision terminal_ui ncurses)
+target_link_libraries(main PRIVATE game_logic deck bot_decision terminal_ui card_counting ncurses)
 
 

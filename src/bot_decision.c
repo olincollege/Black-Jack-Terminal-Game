@@ -7,6 +7,7 @@
 
 
 const char* hard_decision_table[17][10] = {
+    //What the bot does when there are no Aces
     /* player total 4 */  {HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT},
     /* 5 */ {HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT},
     /* 6 */ {HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT},
@@ -27,6 +28,7 @@ const char* hard_decision_table[17][10] = {
 };
 
 const char* soft_decision_table[9][10] = {
+    //What the bot does when there are Aces
     /* A,2 */  {HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT},
     /* A,3 */ {HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT},
     /* A,4 */ {HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT, HIT},
@@ -41,9 +43,11 @@ const char* soft_decision_table[9][10] = {
 
 int bot_decision(PLAYER_HAND bot_hand, PLAYER_HAND dealer_hand, COINS *coins){
     const char* decision;
+    //Figure out what the bot has not considering if they an ACE or not
     int hard_total = hand_sum(bot_hand);
         if (hard_total == 21){return 0;}
     int soft_total_index = 0;
+    //Look at what the dealer has
     int dealer_shows = dealer_hand.cards[0].card_value;
     if (dealer_shows == 1) {dealer_shows+=10;}
     for (int i = 0; i <= bot_hand.count; ++i) {
@@ -55,13 +59,16 @@ int bot_decision(PLAYER_HAND bot_hand, PLAYER_HAND dealer_hand, COINS *coins){
             break;
         }
     }
+    //Basically says if the ACE busts the hand, do not take it into consderation
     if (soft_total_index > 9){
         hard_total = soft_total_index + 1;
         soft_total_index = 0;
     }
+    //Now make decision based on where you stand on the table
     if (soft_total_index){
         decision = soft_decision_table[soft_total_index-4][dealer_shows-2];
     }
+    //Now do this if you are not using an ACE
     else {
         decision = hard_decision_table[hard_total-4][dealer_shows-2];
     }
@@ -84,15 +91,3 @@ int bot_decision(PLAYER_HAND bot_hand, PLAYER_HAND dealer_hand, COINS *coins){
     printw("something is wrong\n\n");
 }
     
-int get_bot_bet(CARD deck[], int top_card){
-    int card_count = 0;
-    for (int i = 0; i < top_card; ++i){
-        card_count += deck[i].hi_lo;
-    }
-    double deck_remaining = ((NUM_DECKS*DECK_SIZE-top_card)/52.0);
-    double card_count_index = (double)card_count/(deck_remaining);
-    if (card_count_index < 1) {return 1;}
-    if (card_count_index < 2) {return 5;}
-    if (card_count_index < 4) {return 10;}
-    return 20;
-    }

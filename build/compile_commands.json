@@ -21,6 +21,11 @@
 },
 {
   "directory": "/home/troy/Downloads/Black-Jack-Terminal-Game/build/src",
+  "command": "/bin/gcc   -Wall -Wextra -pedantic -Wconversion -Wdouble-promotion -Wduplicated-branches -Wduplicated-cond -Wimplicit-fallthrough -Wlogical-op -Wmisleading-indentation -Wnull-dereference -Wshadow -Wsign-conversion -Wunreachable-code -Wunused -g -g -std=gnu2x -o CMakeFiles/card_counting.dir/card_counting.c.o -c /home/troy/Downloads/Black-Jack-Terminal-Game/src/card_counting.c",
+  "file": "/home/troy/Downloads/Black-Jack-Terminal-Game/src/card_counting.c"
+},
+{
+  "directory": "/home/troy/Downloads/Black-Jack-Terminal-Game/build/src",
   "command": "/bin/gcc   -Wall -Wextra -pedantic -Wconversion -Wdouble-promotion -Wduplicated-branches -Wduplicated-cond -Wimplicit-fallthrough -Wlogical-op -Wmisleading-indentation -Wnull-dereference -Wshadow -Wsign-conversion -Wunreachable-code -Wunused -g -g -std=gnu2x -o CMakeFiles/main.dir/main.c.o -c /home/troy/Downloads/Black-Jack-Terminal-Game/src/main.c",
   "file": "/home/troy/Downloads/Black-Jack-Terminal-Game/src/main.c"
 }

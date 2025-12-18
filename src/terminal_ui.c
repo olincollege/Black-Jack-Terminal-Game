@@ -49,14 +49,18 @@ void print_card(CARD card) {
         card_name_string(card.card_name),
         card_suit_string(card.card_suit)
     );
-    //getch();
     sleep(SLEEP_TIME);
 }
 
 void print_hand_sum(PLAYER_HAND hand){
+    //Move to where the hand sum is printed
     move(hand.y_cord+5, hand.x_cord);
     int sum = hand_sum(hand);
     int temp_sum = 0;
+    //Basically look at if you have any ACES or not
+    //and print every amount that it can be (hand_sum)
+    //will return the max value it will be without
+    //busting you
     for (int i = 0; i <= hand.count; ++i) {
         temp_sum += hand.cards[i].card_value;
     }
@@ -69,11 +73,15 @@ void print_hand_sum(PLAYER_HAND hand){
 }
 
 void print_hand(PLAYER_HAND hand, int count) {
+    //these are temp cords
     int x_cord; int y_cord;
+    //move to where they should be
     move(hand.y_cord,hand.x_cord);
     printw("%s's hand: \n", hand.name);
+    //move to where cards should be printed
     y_cord = hand.y_cord + 2; x_cord = hand.x_cord;
     move(y_cord,x_cord);
+    //move the displa down for each card
     for (int i = 0; i <= count; ++i ){
         print_card(hand.cards[i]);
         y_cord += 1;
@@ -96,6 +104,7 @@ void print_start_game(PLAYER_HAND bot_hand,
     print_hand(player_hand, 1);
     refresh();
     move(dealer_hand.y_cord, dealer_hand.x_cord);
+    //Just show one card for their dealer not their whole hand
     printw("Dealer Shows:\n");
     move(dealer_hand.y_cord + 2, dealer_hand.x_cord);
     print_card(dealer_hand.cards[0]);

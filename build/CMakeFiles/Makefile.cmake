@@ -80,5 +80,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/game_logic.dir/DependInfo.cmake"
   "src/CMakeFiles/bot_decision.dir/DependInfo.cmake"
   "src/CMakeFiles/terminal_ui.dir/DependInfo.cmake"
+  "src/CMakeFiles/card_counting.dir/DependInfo.cmake"
   "src/CMakeFiles/main.dir/DependInfo.cmake"
   )

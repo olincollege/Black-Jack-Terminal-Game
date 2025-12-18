@@ -10,4 +10,3 @@
 extern const char* hard_decision_table[17][10];
 extern const char* soft_decision_table[9][10];
 int bot_decision(PLAYER_HAND bot_hand, PLAYER_HAND dealer_hand, COINS *coins);
-int get_bot_bet(CARD deck[], int top_card);

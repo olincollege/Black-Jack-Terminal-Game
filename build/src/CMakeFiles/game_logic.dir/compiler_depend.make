@@ -67,8 +67,11 @@ src/CMakeFiles/game_logic.dir/game_logic.c.o: /home/troy/Downloads/Black-Jack-Te
   /home/troy/Downloads/Black-Jack-Terminal-Game/src/game_logic.h \
   /home/troy/Downloads/Black-Jack-Terminal-Game/src/deck.h \
   /home/troy/Downloads/Black-Jack-Terminal-Game/src/terminal_ui.h \
-  /home/troy/Downloads/Black-Jack-Terminal-Game/src/bot_decision.h
+  /home/troy/Downloads/Black-Jack-Terminal-Game/src/bot_decision.h \
+  /home/troy/Downloads/Black-Jack-Terminal-Game/src/card_counting.h
 
+
+/home/troy/Downloads/Black-Jack-Terminal-Game/src/card_counting.h:
 
 /home/troy/Downloads/Black-Jack-Terminal-Game/src/bot_decision.h:
 

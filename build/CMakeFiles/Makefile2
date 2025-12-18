@@ -113,6 +113,7 @@ src/all: src/CMakeFiles/deck.dir/all
 src/all: src/CMakeFiles/game_logic.dir/all
 src/all: src/CMakeFiles/bot_decision.dir/all
 src/all: src/CMakeFiles/terminal_ui.dir/all
+src/all: src/CMakeFiles/card_counting.dir/all
 src/all: src/CMakeFiles/main.dir/all
 .PHONY : src/all
 
@@ -125,6 +126,7 @@ src/clean: src/CMakeFiles/deck.dir/clean
 src/clean: src/CMakeFiles/game_logic.dir/clean
 src/clean: src/CMakeFiles/bot_decision.dir/clean
 src/clean: src/CMakeFiles/terminal_ui.dir/clean
+src/clean: src/CMakeFiles/card_counting.dir/clean
 src/clean: src/CMakeFiles/main.dir/clean
 .PHONY : src/clean
 
@@ -878,7 +880,7 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 src/CMakeFiles/deck.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/deck.dir/build.make src/CMakeFiles/deck.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/deck.dir/build.make src/CMakeFiles/deck.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=3,4 "Built target deck"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=5,6 "Built target deck"
 .PHONY : src/CMakeFiles/deck.dir/all
 
 # Build rule for subdir invocation for target.
@@ -904,7 +906,7 @@ src/CMakeFiles/deck.dir/clean:
 src/CMakeFiles/game_logic.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/game_logic.dir/build.make src/CMakeFiles/game_logic.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/game_logic.dir/build.make src/CMakeFiles/game_logic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=5,6 "Built target game_logic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=7,8 "Built target game_logic"
 .PHONY : src/CMakeFiles/game_logic.dir/all
 
 # Build rule for subdir invocation for target.
@@ -956,7 +958,7 @@ src/CMakeFiles/bot_decision.dir/clean:
 src/CMakeFiles/terminal_ui.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/terminal_ui.dir/build.make src/CMakeFiles/terminal_ui.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/terminal_ui.dir/build.make src/CMakeFiles/terminal_ui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=9,10 "Built target terminal_ui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=11,12 "Built target terminal_ui"
 .PHONY : src/CMakeFiles/terminal_ui.dir/all
 
 # Build rule for subdir invocation for target.
@@ -976,6 +978,32 @@ src/CMakeFiles/terminal_ui.dir/clean:
 .PHONY : src/CMakeFiles/terminal_ui.dir/clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/card_counting.dir
+
+# All Build rule for target.
+src/CMakeFiles/card_counting.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/card_counting.dir/build.make src/CMakeFiles/card_counting.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/card_counting.dir/build.make src/CMakeFiles/card_counting.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=3,4 "Built target card_counting"
+.PHONY : src/CMakeFiles/card_counting.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/card_counting.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/card_counting.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/card_counting.dir/rule
+
+# Convenience name for target.
+card_counting: src/CMakeFiles/card_counting.dir/rule
+.PHONY : card_counting
+
+# clean rule for target.
+src/CMakeFiles/card_counting.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/card_counting.dir/build.make src/CMakeFiles/card_counting.dir/clean
+.PHONY : src/CMakeFiles/card_counting.dir/clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/main.dir
 
 # All Build rule for target.
@@ -983,14 +1011,15 @@ src/CMakeFiles/main.dir/all: src/CMakeFiles/deck.dir/all
 src/CMakeFiles/main.dir/all: src/CMakeFiles/game_logic.dir/all
 src/CMakeFiles/main.dir/all: src/CMakeFiles/bot_decision.dir/all
 src/CMakeFiles/main.dir/all: src/CMakeFiles/terminal_ui.dir/all
+src/CMakeFiles/main.dir/all: src/CMakeFiles/card_counting.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=7,8 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles --progress-num=9,10 "Built target main"
 .PHONY : src/CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/troy/Downloads/Black-Jack-Terminal-Game/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/main.dir/rule

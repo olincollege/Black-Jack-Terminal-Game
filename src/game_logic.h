@@ -3,6 +3,7 @@
 #include "deck.h"
 #include "terminal_ui.h"
 #include "bot_decision.h"
+#include "card_counting.h"
 
 #define BUST_AMOUNT 21
 #define DEALER_HIT 17
