@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <ncurses.h>
-
-#include "terminal_ui.h"
 #include "bot_decision.h"
 
 

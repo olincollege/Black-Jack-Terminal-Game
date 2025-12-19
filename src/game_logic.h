@@ -1,9 +1,14 @@
 #pragma once
 
-#include "deck.h"
-#include "terminal_ui.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <ncurses.h>
+
 #include "bot_decision.h"
 #include "card_counting.h"
+#include "deck.h"
+#include "terminal_ui.h"
 
 #define BUST_AMOUNT 21
 #define DEALER_HIT 17

@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-
 #include "terminal_ui.h"
 
 #define SLEEP_TIME 1

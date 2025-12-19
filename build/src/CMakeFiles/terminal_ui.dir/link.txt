@@ -1,2 +1,0 @@
-/bin/ar qc libterminal_ui.a CMakeFiles/terminal_ui.dir/terminal_ui.c.o
-/bin/ranlib libterminal_ui.a

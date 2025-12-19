@@ -1,5 +1,11 @@
 #pragma once
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include <ncurses.h>
+
 #include "deck.h"  
 #include "game_logic.h"
 

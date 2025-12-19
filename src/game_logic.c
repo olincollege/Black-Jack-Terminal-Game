@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <ncurses.h>
-
 #include "game_logic.h"
 
 GAME_STATE init_game (CARD deck[], COINS *coins){

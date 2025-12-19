@@ -1,7 +1,13 @@
 #pragma once
 
+#include <stdio.h>
+#include <unistd.h>
+
+#include <ncurses.h>
+
 #include "deck.h"
 #include "game_logic.h"
+#include "terminal_ui.h"
 
 #define HIT     "hit"
 #define STAND   "stand"

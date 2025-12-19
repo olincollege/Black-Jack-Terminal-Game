@@ -1,6 +1,3 @@
-#include <time.h>
-#include <stdlib.h>
-
 #include "deck.h"
 
 #define NUM_DECK 2

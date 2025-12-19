@@ -1,5 +1,8 @@
 #pragma once
 
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
 #define DECK_SIZE 52
 #define NUM_SUITS 4
